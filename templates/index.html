@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Homelab App Creator</h2>
+        <div class="menu">
+            <div class="menu-item" id="add-project">+ Add Project</div>
+            <div id="project-list"></div>
+        </div>
+    </div>
+    <div class="main-content">
+        <h1 id="project-title">Chat Application</h1>
+        <div id="chat-window">
+            <div id="messages"></div>
+        </div>
+        <div class="message-input">
+            <textarea id="user-message" placeholder="Type your message here..."></textarea>
+            <select id="agent-selector">
+                <option value="gpt">GPT</option>
+                <option value="llama">LLaMA</option>
+            </select>
+            <button id="send-message"><img src="{{ url_for('static', filename='img/send-icon.png') }}" alt="Send"></button>
+        </div>
+    </div>
+
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Project</h2>
+            <input type="text" id="project-name" placeholder="Project Name">
+            <textarea id="project-description" placeholder="Project Description"></textarea>
+            <button id="save-project">Save</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
